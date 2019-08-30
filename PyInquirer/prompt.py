@@ -99,9 +99,10 @@ def prompt(questions,
             print(e)
             raise ValueError("No question type '{}'".format(_type))
         except KeyboardInterrupt:
-            print('')
-            print(kbi_msg)
-            print('')
+            if kbi_msg:
+                print('')
+                print(kbi_msg)
+                print('')
             return {}
     return answers
 
